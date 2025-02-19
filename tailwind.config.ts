@@ -8,9 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        rounded: '20px',
+        secondary:"30px"
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        body:{
+          DEFAULT:"#2B2B2B",
+          secondary:"#3B3B3B"
+        },
+        
+        primary:"#A259FF",
+        hover:"#8C33E6",
+        darkWhite:"#ccc"
       },
     },
   },
