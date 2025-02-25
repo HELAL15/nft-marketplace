@@ -1,6 +1,6 @@
+import HowItWorkSection from '@/components/sections/HowItWorkSection';
 import JoinWeeklyDigest from '@/components/sections/JoinWeeklyDigest';
 import { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 
 export const metadata: Metadata = {
   title: 'Home | NFT Marketplace',
@@ -9,13 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const t = useTranslations();
   return (
     <>
       <main>
-        <h1>{t('hello')}</h1>
-
-        <h2>dddddddd</h2>
+        <HowItWorkSection />
 
         <JoinWeeklyDigest />
       </main>

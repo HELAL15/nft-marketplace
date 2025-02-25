@@ -61,7 +61,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={dir}>
-      <body className={`antialiased`}>
+      <body className="antialiased selection:bg-primary selection:text-white">
         <NextTopLoader color="#A259FF" height={2} showSpinner={false} />
         <NextIntlClientProvider messages={messages}>
           <Header />
