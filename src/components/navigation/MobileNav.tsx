@@ -1,20 +1,22 @@
-import Link from 'next/link';
 import React, { FC, ReactNode } from 'react';
 import { IoClose } from '@/components/common/Icons';
-import Image from 'next/image';
 import clsx from 'clsx';
 import SignUpLink from '../common/SignUpLink';
+import LangChange from '../common/LangChange';
+import Logo from '../common/Logo';
 
 interface IProps {
   isMenuOpen: boolean;
   setIsMenuOpen: () => void;
   navItemsLinks: ReactNode;
+  close?: () => void;
 }
 
 const MobileNav: FC<IProps> = ({
   isMenuOpen,
   setIsMenuOpen,
-  navItemsLinks = []
+  navItemsLinks = [],
+  close
 }) => {
   return (
     <>
@@ -25,17 +27,12 @@ const MobileNav: FC<IProps> = ({
         )}
       >
         <div className="flex relative z-50 items-center gap-4 justify-between pb-6 border-b border-primary">
-          <Link href={'/'} className="flex items-center gap-1">
-            <Image
-              src={'/assets/logo.svg'}
-              width={0}
-              height={0}
-              alt="logo"
-              className="object-contain w-[160px] lg:w-[243px] h-[30px] md:h-[32px]"
-              sizes="100"
-            />
-          </Link>
-          <button onClick={setIsMenuOpen} className="block lg:hidden">
+          <Logo />
+          <button
+            aria-label="Close"
+            onClick={setIsMenuOpen}
+            className="block lg:hidden"
+          >
             <i className="text-2xl">
               <IoClose />
             </i>
@@ -43,7 +40,10 @@ const MobileNav: FC<IProps> = ({
         </div>
         <ul className="flex flex-col max-lg:gap-12 gap-6 relative z-50 pt-6">
           {navItemsLinks}
-          <SignUpLink />
+          <li className="flex items-center gap-4">
+            <SignUpLink />
+            <LangChange setIsMenuOpen={close} />
+          </li>
         </ul>
       </nav>
     </>

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import SignUpLink from '../common/SignUpLink';
+import LangChange from '../common/LangChange';
 
 interface IProps {
   navItemsLinks: ReactNode;
@@ -8,9 +9,12 @@ interface IProps {
 const Nav: FC<IProps> = ({ navItemsLinks }) => {
   return (
     <>
-      <nav className="flex items-center gap-8 max-lg:hidden">
-        <ul className="flex items-center gap-10 xl:gap-14">{navItemsLinks}</ul>
-        <SignUpLink />
+      <nav className="flex items-center gap-8 xl:gap-10 max-lg:hidden">
+        <ul className="flex items-center gap-8 xl:gap-10">{navItemsLinks}</ul>
+        <li className="flex items-center gap-4">
+          <SignUpLink />
+          <LangChange />
+        </li>
       </nav>
     </>
   );

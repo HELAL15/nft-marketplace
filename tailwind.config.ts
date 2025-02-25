@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Work Sans"', 'ui-sans-serif', 'system-ui'],
+        mono: ['"Space Mono"', 'ui-monospace', 'SFMono-Regular'],
+      },
       container: {
         center: true,
         padding: {
@@ -29,8 +33,8 @@ export default {
           secondary:"#3B3B3B"
         },
         
-        primary:"#A259FF",
-        hover:"#8C33E6",
+        primary:"#8C33E6",
+        hover:"#A259FF",
         darkWhite:"#ccc"
       },
     },

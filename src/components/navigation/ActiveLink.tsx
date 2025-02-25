@@ -8,30 +8,48 @@ import { useEffect } from 'react';
 interface ActiveLinkProps {
   href: string;
   children: React.ReactNode;
-  closeMenu: () => void;
+  closeMenu?: () => void;
+  footer?: boolean;
 }
 
 const ActiveLink: React.FC<ActiveLinkProps> = ({
   href,
   children,
-  closeMenu
+  closeMenu,
+  footer = false
 }) => {
   const pathname = usePathname();
 
   useEffect(() => {
-    closeMenu();
+    if (closeMenu) {
+      closeMenu();
+    }
   }, [closeMenu, pathname]);
 
   return (
-    <Link
-      href={href}
-      className={clsx(
-        'text-base max-lg:text-3xl font-medium',
-        pathname === href ? 'text-primary' : 'text-white'
+    <>
+      {footer ? (
+        <Link
+          href={href}
+          className={clsx(
+            'text-base  font-normal w-fit duration-300 hover:text-primary',
+            pathname === href ? 'text-primary' : 'text-darkWhite'
+          )}
+        >
+          {children}
+        </Link>
+      ) : (
+        <Link
+          href={href}
+          className={clsx(
+            'text-base max-lg:text-3xl font-medium w-fit duration-300 hover:text-primary',
+            pathname === href ? 'text-primary' : 'text-white'
+          )}
+        >
+          {children}
+        </Link>
       )}
-    >
-      {children}
-    </Link>
+    </>
   );
 };
 
