@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
 import Header from '@/components/layout/Header';
-// import Footer from '@/components/layout/Footer';
 import NextTopLoader from 'nextjs-toploader';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';

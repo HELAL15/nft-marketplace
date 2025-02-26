@@ -20,7 +20,7 @@ const HowItWorkCard: FC<IProps> = ({ img, title, desc }) => {
           alt="how it work"
         />
         <div className="content space-y-2 text-center max-md:flex-grow">
-          <h4 className="text-xl font-bold">{title}</h4>
+          <h3 className="text-xl font-bold">{title}</h3>
           <p className=" text-sm md:text-base font-normal">{desc}</p>
         </div>
       </div>

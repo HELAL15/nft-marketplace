@@ -7,7 +7,7 @@ const SignUpLink = ({}) => {
   return (
     <>
       <Link href={'/signup'}>
-        <Button>
+        <Button variant="primary">
           <i className="text-xl">
             <PiUserLight />
           </i>

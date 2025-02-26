@@ -7,6 +7,7 @@ const Logo = () => {
     <>
       <Link href={'/'} className="w-fit">
         <Image
+          priority={false}
           draggable="false"
           src={'/assets/logo.svg'}
           width={0}

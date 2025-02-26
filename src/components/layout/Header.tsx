@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <header className=" py-5 lg:py-4 sticky top-0 left-0 z-50 bg-body ">
+      <header className=" py-5 lg:py-4 sticky top-0 left-0 z-50 bg-body/40 backdrop-blur-lg ">
         <div className="container flex items-center gap-4 justify-between relative">
           {/* logo */}
           <Logo />

@@ -30,7 +30,8 @@ export default {
       colors: {
         body:{
           DEFAULT:"#2B2B2B",
-          secondary:"#3B3B3B"
+          secondary:"#3B3B3B",
+          third:"#858584"
         },
         
         primary:"#8C33E6",
