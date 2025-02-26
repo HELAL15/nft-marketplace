@@ -19,6 +19,7 @@ const AuctionSection = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
         width={0}
         height={0}
+        quality={100}
         sizes="100"
         alt="auction"
       />

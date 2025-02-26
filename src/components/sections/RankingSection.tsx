@@ -4,20 +4,19 @@ import Container from '../common/Container';
 import SectionTitle from '../common/SectionTitle';
 import Link from 'next/link';
 import Button from '../common/Button';
-import NftCard from '../nft/NftCard';
-import { IoEyeOutline } from '@/components/common/Icons';
-import { nftsData } from '@/data/ntfsData';
+import { PiRocketLaunchLight } from '@/components/common/Icons';
+import RankCard from '../nft/RankCard';
+import { Ranking } from '@/data/RankingData';
 
-const NftsSection = () => {
-  const nftsShow = nftsData.map(({ title, img, publisher, price, bid, id }) => (
-    <NftCard
+const RankingSection = () => {
+  const rankingShow = Ranking.map(({ total, id, name, img, rank }) => (
+    <RankCard
       key={id}
-      title={title}
+      rank={rank}
       img={img}
-      publisher={publisher}
-      price={price}
-      bid={bid}
+      total={total}
       id={id}
+      name={name}
     />
   ));
 
@@ -26,26 +25,26 @@ const NftsSection = () => {
       <Section>
         <Container>
           <SectionTitle
-            title="Discover More NFTs"
-            description="Explore new trending NFTs"
+            title="Top creators"
+            description="Checkout Top Rated Creators on the NFT Marketplace"
             action={
               <Link href={'/ranking'} className="w-fit">
                 <Button variant="outline">
                   <i className="text-base">
-                    <IoEyeOutline />
+                    <PiRocketLaunchLight />
                   </i>
-                  <span className="text-sm text-white">see all</span>
+                  <span className="text-sm text-white">View Rankings</span>
                 </Button>
               </Link>
             }
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-8 md:mb-0 md:mt-8">
-            {nftsShow}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 my-8 md:mb-0 md:mt-8">
+            {rankingShow}
           </div>
           <Link href={'/ranking'} className="w-full mt-5 hidden max-md:block">
             <Button variant="outline" cx="w-full">
               <i className="text-base">
-                <IoEyeOutline />
+                <PiRocketLaunchLight />
               </i>
               <span className="text-sm text-white">see all</span>
             </Button>
@@ -56,4 +55,4 @@ const NftsSection = () => {
   );
 };
 
-export default NftsSection;
+export default RankingSection;
