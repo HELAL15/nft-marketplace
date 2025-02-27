@@ -15,7 +15,7 @@ const AuctionSection = () => {
     <Section cx="h-[90vh] relative">
       <span className="absolute inset-0 z-10 bg-gradient-to-t from-purple-700 to-transparent" />
       <Image
-        src={'/assets/auction.jpeg'}
+        src={'/assets/collection3.png'}
         className="absolute inset-0 w-full h-full object-cover z-0"
         width={0}
         height={0}

@@ -12,6 +12,7 @@ const HowItWorkCard: FC<IProps> = ({ img, title, desc }) => {
     <>
       <div className="card flex items-center md:flex-col gap-2 md:gap-4 bg-body-secondary rounded-rounded px-2 lg:px-6 py-8">
         <Image
+          draggable="false"
           className="object-contain mx-auto size-24 md:size-52 lg:size-60"
           src={img}
           width={0}

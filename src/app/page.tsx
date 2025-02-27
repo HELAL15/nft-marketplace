@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import Loading from './loading';
 import CategorySection from '@/components/sections/CategorySection';
 import RankingSection from '@/components/sections/RankingSection';
+import TrendingSection from '@/components/sections/TrendingSection';
+import HeroSection from '@/components/sections/HeroSection';
 
 const AuctionSection = dynamic(
   () => import('@/components/sections/AuctionSection'),
@@ -43,9 +45,9 @@ export default function Home() {
   return (
     <>
       <main>
-        <h1>d</h1>
-        <h2>dd</h2>
-        <h3>ddd</h3>
+        <HeroSection />
+
+        <TrendingSection />
 
         <RankingSection />
 

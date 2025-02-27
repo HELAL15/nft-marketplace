@@ -9,7 +9,7 @@ interface IProps {
 const Section: FC<IProps> = ({ children, cx = '' }) => {
   return (
     <>
-      <section className={clsx(` my-16 relative ${cx}`)}>{children}</section>
+      <section className={clsx(` my-20 relative ${cx}`)}>{children}</section>
     </>
   );
 };

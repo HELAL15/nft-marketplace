@@ -2,11 +2,10 @@ import React from 'react';
 import Section from '../common/Section';
 import Container from '../common/Container';
 import SectionTitle from '../common/SectionTitle';
-import Link from 'next/link';
-import Button from '../common/Button';
 import NftCard from '../nft/NftCard';
 import { IoEyeOutline } from '@/components/common/Icons';
 import { nftsData } from '@/data/ntfsData';
+import ViewMore from '../common/ViewMore';
 
 const NftsSection = () => {
   const nftsShow = nftsData.map(({ title, img, publisher, price, bid, id }) => (
@@ -29,27 +28,24 @@ const NftsSection = () => {
             title="Discover More NFTs"
             description="Explore new trending NFTs"
             action={
-              <Link href={'/ranking'} className="w-fit">
-                <Button variant="outline">
-                  <i className="text-base">
-                    <IoEyeOutline />
-                  </i>
-                  <span className="text-sm text-white">see all</span>
-                </Button>
-              </Link>
+              <ViewMore
+                mobile={false}
+                icon={<IoEyeOutline />}
+                title="see all"
+                href="/ranking"
+              />
             }
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-8 md:mb-0 md:mt-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-8 md:mb-0 md:mt-8">
             {nftsShow}
-          </div>
-          <Link href={'/ranking'} className="w-full mt-5 hidden max-md:block">
-            <Button variant="outline" cx="w-full">
-              <i className="text-base">
-                <IoEyeOutline />
-              </i>
-              <span className="text-sm text-white">see all</span>
-            </Button>
-          </Link>
+          </ul>
+
+          <ViewMore
+            icon={<IoEyeOutline />}
+            title="see all"
+            href="/ranking"
+            mobile={true}
+          />
         </Container>
       </Section>
     </>

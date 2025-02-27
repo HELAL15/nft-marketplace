@@ -15,9 +15,9 @@ const CategorySection = () => {
       <Section>
         <Container>
           <SectionTitle title="Browse Categories" />
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {categoryShow}
-          </div>
+          </ul>
         </Container>
       </Section>
     </>
