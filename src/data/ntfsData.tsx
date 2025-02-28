@@ -24,3 +24,16 @@ export const nftsData = [
     bid: '0.33'
   }
 ];
+
+// Function to duplicate data N times
+const duplicateNFTs = (data: typeof nftsData, times: number) => {
+  return Array.from({ length: times }, (_, i) =>
+    data.map((nft) => ({
+      ...nft,
+      id: nft.id + i * data.length // Ensure unique IDs
+    }))
+  ).flat();
+};
+
+// Generate duplicated data (e.g., 5 times)
+export const duplicatedNFTs = duplicateNFTs(nftsData, 6);

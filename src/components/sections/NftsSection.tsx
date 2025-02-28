@@ -32,7 +32,7 @@ const NftsSection = () => {
                 mobile={false}
                 icon={<IoEyeOutline />}
                 title="see all"
-                href="/ranking"
+                href="/marketplace"
               />
             }
           />
@@ -43,7 +43,7 @@ const NftsSection = () => {
           <ViewMore
             icon={<IoEyeOutline />}
             title="see all"
-            href="/ranking"
+            href="/marketplace"
             mobile={true}
           />
         </Container>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import UserInfo from '../common/UserInfo';
 import SubInfo from '../common/SubInfo';
+import clsx from 'clsx';
 
 interface IProps {
   title?: string;
@@ -14,6 +15,8 @@ interface IProps {
   price?: string;
   bid?: string;
   id?: number;
+  cx?: string;
+  imgHeight?: string;
 }
 
 const NftCard: FC<IProps> = ({
@@ -22,14 +25,20 @@ const NftCard: FC<IProps> = ({
   publisher,
   price,
   bid,
-  id
+  id,
+  cx,
+  imgHeight = '224px'
 }) => {
   const { name, avatar = '' } = publisher || {};
   return (
     <>
-      <li className="card rounded-rounded overflow-hidden bg-body-secondary group">
-        <Link href={`/${id}`}>
-          <div className="img w-full h-56 overflow-hidden">
+      <li
+        className={clsx(
+          `card rounded-rounded overflow-hidden bg-body-secondary ${cx} group`
+        )}
+      >
+        <Link href={`/marketplace/${id}`}>
+          <div className={`img w-full ${`h-[${imgHeight}]`} overflow-hidden`}>
             <Image
               draggable="false"
               src={img}
