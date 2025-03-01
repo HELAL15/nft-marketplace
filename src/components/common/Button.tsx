@@ -8,24 +8,30 @@ interface IProps {
   onClick?: () => void;
   cx?: string;
   variant?: string;
+  disabled?: boolean;
+  type?: 'submit' | 'button' | 'reset';
 }
 
 const Button: FC<IProps> = ({
   children,
+  type = 'submit',
   variant = 'primary',
   onClick,
-  cx = ''
+  cx = '',
+  disabled = false
 }) => {
   return (
     <>
       <button
+        type={type}
+        disabled={disabled}
         onClick={onClick}
         className={clsx(
           `${variant === 'primary' && 'bg-primary'}
           ${
             variant === 'outline' &&
             'bg-transparent border border-primary text-primary hover:text-white'
-          } px-8 py-3 bg-primary rounded-rounded hover:bg-hover flex items-center justify-center gap-2 ${cx}`
+          } disabled:bg-slate-500 disabled:cursor-not-allowed px-8 py-3 bg-primary rounded-rounded hover:bg-hover flex items-center justify-center gap-2 ${cx}`
         )}
       >
         {children}

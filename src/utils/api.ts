@@ -9,3 +9,14 @@ export const fetchData = async (url: string) => {
     throw new Error("Failed to fetch data");
   }
 };
+
+
+export const postData = async (url: string, data: any) => {
+  try {
+    const response = await apiClient.post(url, data);
+    return response.data;
+  } catch (error) {
+    
+    throw error;
+  }
+};

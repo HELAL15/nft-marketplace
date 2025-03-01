@@ -5,6 +5,8 @@ import NextTopLoader from 'nextjs-toploader';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import dynamic from 'next/dynamic';
+import { QueryProvider } from '@/providers/QueryProvider';
+import { Toaster } from 'sonner';
 const Footer = dynamic(() => import('@/components/layout/Footer'), {
   ssr: true,
   loading: () => <p>Loading...</p>
@@ -64,7 +66,10 @@ export default async function RootLayout({
         <NextTopLoader color="#A259FF" height={2} showSpinner={false} />
         <NextIntlClientProvider messages={messages}>
           <Header />
-          {children}
+          <QueryProvider>
+            {children}
+            <Toaster position="top-center" />
+          </QueryProvider>
           <Footer />
         </NextIntlClientProvider>
       </body>
