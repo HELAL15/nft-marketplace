@@ -43,9 +43,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const res = fetchData('/profile');
-  const data = await res;
-  console.log(data);
+  // const res = fetchData('/profile');
+  // const data = await res;
+  // console.log(data);
 
   return (
     <>

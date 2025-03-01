@@ -2,7 +2,9 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get('TOKEN_NAME')?.value;
+  
+  const res = NextResponse.next();
+  const token = request.cookies.get('token')?.value;
 
   if (!token && request.nextUrl.pathname === '/profile') {
     const loginUrl = new URL('/login', request.url);
@@ -18,7 +20,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
-  return NextResponse.next();
+
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.headers.set("Access-Control-Allow-Credentials", "true");
+  return res;
+
+  // return NextResponse.next();
 }
 
 export const config = {
